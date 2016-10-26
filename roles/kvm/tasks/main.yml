@@ -1,0 +1,27 @@
+---
+  - name: Ensure cpu-checker is installed to run kvm-ok
+    apt:
+      name: cpu-checker=0.7-0ubuntu7
+      update_cache: yes
+      state: present
+  - name: Ensure qemu-kvm is installed
+    apt:
+      name: qemu-kvm=1:2.5+dfsg-5ubuntu10
+      update_cache: no
+      state: present
+  - name: Ensure libvirt-bin is installed
+    apt:
+      name: libvirt-bin=1.3.1-1ubuntu10
+      update_cache: no
+      state: present
+  - name: Ensure ubuntu-vm-builder is installed
+    apt:
+      name: ubuntu-vm-builder=0.12.4+bzr494-0ubuntu1
+      update_cache: no
+      state: present
+
+  - name: Ensure bridge-utils is installed
+    apt:
+      name: bridge-utils=1.5-9ubuntu1
+      update_cache: yes
+      state: present
