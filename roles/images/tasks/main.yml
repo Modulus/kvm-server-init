@@ -1,0 +1,4 @@
+---
+  - name: "Download ubuntu 16.04 LTS image"
+    get_url: "http://releases.ubuntu.com/16.04.1/ubuntu-16.04.1-server-amd64.iso"
+    dest: "{{image_location}}/ubuntu-16.04.1-server-amd64.iso"

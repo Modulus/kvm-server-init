@@ -29,5 +29,16 @@
   - name: Ensure bridge-utils is installed
     apt:
       name: bridge-utils #=1.5-9ubuntu1
-      update_cache: yes
+      update_cache: no
+      state: present
+
+  - name: Ensure virtinst is installed
+    apt:
+      name: virtinst
+      update_cache: no
+      state: present
+  - name: Ensure virt-manager is installed
+    apt:
+      name: virt-manager
+      update_cache: no
       state: present
