@@ -18,8 +18,11 @@ Vagrant.configure("2") do |config|
         # = when all the machines are up and ready.
         config.vm.provision "ansible_local" do |ansible|
           # Disable default limit to connect to all the machines
-          ansible.limit = "all"
+          ansible.limit = "controller"
+          ansible.install = true
           ansible.playbook = "controller.yml"
+          ansible.verbose  = true
+          ansible.inventory_path = "inventory"
         end
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
