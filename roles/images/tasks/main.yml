@@ -1,4 +1,34 @@
 ---
-  - name: "Download ubuntu 16.04 LTS image"
-    get_url: "http://releases.ubuntu.com/16.04.1/ubuntu-16.04.1-server-amd64.iso"
-    dest: "{{image_location}}/ubuntu-16.04.1-server-amd64.iso"
+  - name: Create image folder if it does not exist
+    file:
+      mode: 0770
+      recurse: yes
+      state: directory
+      path: "{{image_location}}"
+
+  - include: image.yml
+    vars:
+      item: "{{image}}"
+    with_items: "{{images}}"
+    loop_control:
+      loop_var: image
+
+
+
+
+  #- name: "Download ubuntu 16.04 LTS image"
+#    get_url:
+#        url: "http://releases.ubuntu.com/16.04.1/ubuntu-16.04.1-server-amd64.iso"
+#        dest: "{{image_location}}"
+#        timeout: "{{timeout}}"
+
+  #- name: Download ubuntu 16.10 image
+#    get_url:
+#    dest: "{{image_location}}"
+#    timeout: "{{timeout}}"
+
+ # - name: Download centos 7 image
+#    get_url:
+#      url: http://centos.vianett.no/7/isos/x86_64/CentOS-7-x86_64-Minimal-1511.iso
+#      dest: "{{image_location}}"
+#      timeout: "{{timeout}}"
