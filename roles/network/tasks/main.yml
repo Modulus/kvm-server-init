@@ -1,0 +1,6 @@
+---
+  - name: Ensure bridge-utils is installed
+    apt:
+      name: bridge-utils #=1.5-9ubuntu1
+      update_cache: yes
+      state: present

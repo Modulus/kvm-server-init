@@ -6,3 +6,4 @@
     roles:
       - kvm
       - images
+      - network

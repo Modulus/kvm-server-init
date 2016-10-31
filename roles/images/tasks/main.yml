@@ -4,6 +4,7 @@
       mode: 0770
       recurse: yes
       state: directory
+      owner: "{{user}}"
       path: "{{image_location}}"
 
   - include: image.yml
