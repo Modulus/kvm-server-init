@@ -25,6 +25,8 @@ SOLVED: found a way.
 Changing /etc/libvirt/qemu.conf to make things work.
 Uncomment user/group to work as root.
 Then restart libvirtd
+
+1. *First edit the /etc/libvirt/qemu.conf*
 ```bash
 # The user for QEMU processes run by the system instance. It can be
 # specified as a user name or as a user id. The qemu driver will try to
@@ -53,7 +55,7 @@ group = "root"
 #dynamic_ownership = 1
 ```
 
-### Then run
+2. *Then restart the libvirtd service*
 ```bash
 [root@dev1 ~]# service libvirtd restart
 Stopping libvirtd daemon:                                  [  OK  ]
