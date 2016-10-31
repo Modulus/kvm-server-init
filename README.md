@@ -51,7 +51,10 @@ group = "root"
 # to match the configured user/group above. Defaults to 1.
 # Set to 0 to disable file ownership changes.
 #dynamic_ownership = 1
+```
 
+### Then run
+```bash
 [root@dev1 ~]# service libvirtd restart
 Stopping libvirtd daemon:                                  [  OK  ]
 Starting libvirtd daemon:                                  [  OK  ]
