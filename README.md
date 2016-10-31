@@ -19,13 +19,13 @@ This ansible collection of playbooks will help you setup a kvm server. This requ
 
 *sources*: [Installation guide](https://help.ubuntu.com/lts/serverguide/libvirt.html)
 
-Fix permission error:
+### Fix permission error:
 =====================
 SOLVED: found a way.
 Changing /etc/libvirt/qemu.conf to make things work.
 Uncomment user/group to work as root.
 Then restart libvirtd
-
+```bash
 # The user for QEMU processes run by the system instance. It can be
 # specified as a user name or as a user id. The qemu driver will try to
 # parse this value first as a name and then, if the name doesn't exist,
@@ -55,4 +55,4 @@ group = "root"
 [root@dev1 ~]# service libvirtd restart
 Stopping libvirtd daemon:                                  [  OK  ]
 Starting libvirtd daemon:                                  [  OK  ]
-====================================================================
+```
